@@ -6,12 +6,10 @@ public class TowerScript : MonoBehaviour {
 
 	public TowersObject tw;
 	[SerializeField] private ObjectPooler objPooler;
-	private float damage;
 	private float speed;
 
 	void OnEnable () {
 		GetComponent<Renderer>().material.color = tw.color;
-		damage = tw.damage;
 		speed = tw.shotSpeed;
 
 		StartCoroutine(Shot());
@@ -22,6 +20,8 @@ public class TowerScript : MonoBehaviour {
 			yield return new WaitForSeconds(speed);
 			var obj = objPooler.GetPooledObject();
 			obj.transform.position = transform.position;
+			obj.tag = tw.ballTag;
+			obj.GetComponent<TurretBullet>().damage = tw.damage;
 			obj.SetActive(true);
 		}
 	}

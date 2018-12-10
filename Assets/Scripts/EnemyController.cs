@@ -5,16 +5,21 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class EnemyController : MonoBehaviour {
 
-	[SerializeField] private int curHealth;
+	[SerializeField] private float curHealth;
 	[SerializeField] private float speed;
 	[SerializeField] private bool direction;
 	[SerializeField] private Rigidbody rb;
-	[SerializeField] private Color[] colorsTemp;
-	
-	void Start () {
-		
+	[SerializeField] private string[] enemiesTag;
+	[SerializeField] private Color[] colors;
+	private Color curColor;
+
+	void OnEnable() {
+		int random = Random.Range(0, enemiesTag.Length);
+		gameObject.tag = enemiesTag[random];
+		print(enemiesTag[random]);
+		curColor = GetComponent<Renderer>().material.color = colors[random];
 	}
-	
+
 	void FixedUpdate () {
 		int x;
 		if(direction) x = 1;
@@ -23,12 +28,12 @@ public class EnemyController : MonoBehaviour {
 		rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, x * speed);
 	}
 
-	public void DecreaseLife(int damage){
+	public void DecreaseLife(float damage){
 		if(curHealth <= 0){
-			Destroy(gameObject);
+			gameObject.SetActive(false);
 			return;
 		}
-
+		
 		curHealth -= damage;
 	}
 
@@ -38,10 +43,10 @@ public class EnemyController : MonoBehaviour {
 	}
 
 	void OnMouseEnter() {
-		GetComponent<Renderer>().material.color = colorsTemp[0];
+		GetComponent<Renderer>().material.color = Color.white;
 	}
 
 	void OnMouseExit() {
-		GetComponent<Renderer>().material.color = colorsTemp[1];
+		GetComponent<Renderer>().material.color = curColor;
 	}
 }
