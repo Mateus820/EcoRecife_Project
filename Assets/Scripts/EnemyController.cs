@@ -9,6 +9,7 @@ public class EnemyController : MonoBehaviour {
 	[SerializeField] private float speed;
 	[SerializeField] private bool direction;
 	[SerializeField] private Rigidbody rb;
+	[SerializeField] private Color[] colorsTemp;
 	
 	void Start () {
 		
@@ -34,5 +35,13 @@ public class EnemyController : MonoBehaviour {
 	void OnCollisionEnter(Collision other) {
 		if(other.gameObject.tag == "DeathWall")
 			gameObject.SetActive(false);
+	}
+
+	void OnMouseEnter() {
+		GetComponent<Renderer>().material.color = colorsTemp[0];
+	}
+
+	void OnMouseExit() {
+		GetComponent<Renderer>().material.color = colorsTemp[1];
 	}
 }

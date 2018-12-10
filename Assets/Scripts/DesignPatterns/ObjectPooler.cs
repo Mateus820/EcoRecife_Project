@@ -4,16 +4,11 @@ using UnityEngine;
 
 public class ObjectPooler : MonoBehaviour {
 
-	public static ObjectPooler instance;
 	[SerializeField] private GameObject pooledObject;
 	[SerializeField] private int pooledAmount;
 	[SerializeField] private bool willGrow;
 
 	List<GameObject> pooledObjects;
-
-	void Awake() {
-		instance = this;	
-	}
 	
 	void Start () {
 		pooledObjects = new List<GameObject>();

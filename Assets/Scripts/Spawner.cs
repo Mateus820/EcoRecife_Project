@@ -5,6 +5,7 @@ using UnityEngine;
 public class Spawner : MonoBehaviour {
 
 	[SerializeField] private float time;
+	[SerializeField] private ObjectPooler objPooler;
 	[SerializeField] private Transform[] pointsToSpwan;
 
 	void Start () {
@@ -15,7 +16,7 @@ public class Spawner : MonoBehaviour {
 
 		int random = Random.Range(0, pointsToSpwan.Length);
 
-		var obj = ObjectPooler.instance.GetPooledObject();
+		var obj = objPooler.GetPooledObject();
 		obj.transform.position = pointsToSpwan[random].position;
 		obj.SetActive(true);
 	}
