@@ -13,7 +13,9 @@ public class TurretBullet : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other) {
-		if(other.gameObject.tag == gameObject.tag)
+		if(other.gameObject.tag == gameObject.tag){
 			other.gameObject.GetComponent<EnemyController>().DecreaseLife(damage);
+			gameObject.SetActive(false);
+		}
 	}
 }
