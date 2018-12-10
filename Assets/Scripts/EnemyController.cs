@@ -29,12 +29,13 @@ public class EnemyController : MonoBehaviour {
 	}
 
 	public void DecreaseLife(float damage){
+		
+		StartCoroutine(TakingDamage());
+		curHealth -= damage;
 		if(curHealth <= 0){
 			gameObject.SetActive(false);
 			return;
 		}
-		
-		curHealth -= damage;
 	}
 
 	void OnCollisionEnter(Collision other) {
@@ -48,5 +49,12 @@ public class EnemyController : MonoBehaviour {
 
 	void OnMouseExit() {
 		GetComponent<Renderer>().material.color = curColor;
+	}
+
+	IEnumerator TakingDamage()
+	{
+		GetComponent<Renderer>().material.color = Color.magenta;
+		yield return new WaitForSeconds(1f);
+		GetComponent<Renderer>().material.color = colors[0];
 	}
 }
