@@ -19,7 +19,7 @@ public class TurretBullet : MonoBehaviour {
 		
 		if(other.gameObject.tag == gameObject.tag){
 			gameObject.SetActive(false);
-			other.gameObject.GetComponent<EnemyController>().DecreaseLife(damage);
+			other.gameObject.GetComponent<EnemyController>().DecreaseLife(damage * 2);
 		}
 		else if(other.gameObject.tag == "DeathBall"){
 			gameObject.SetActive(false);

@@ -41,8 +41,10 @@ public class BlueTower : MonoBehaviour {
 			}
 			if(objLeft != null && objRight != null){
 				objLeft.GetComponent<BlueShotgun>().target = dirLeft;
+				objLeft.transform.position = transform.position;
 				objLeft.SetActive(true);
 				objRight.GetComponent<BlueShotgun>().target = dirRight;
+				objRight.transform.position = transform.position;
 				objRight.SetActive(true);
 			}
 			else{

@@ -20,7 +20,12 @@ public class BuildManager : MonoBehaviour {
 	}
 
 	void Update() {
-		if(Input.GetKeyDown(KeyCode.Alpha2)){
+
+		if(Input.GetKeyDown(KeyCode.Alpha1)){
+			turret = turrets[0];
+			print(1);
+		}
+		else if(Input.GetKeyDown(KeyCode.Alpha2)){
 			turret = turrets[1];
 			print(2);
 		}
@@ -33,7 +38,7 @@ public class BuildManager : MonoBehaviour {
 	public void SetTurret(string turretName){
 		switch(turretName){
 			case "Riso":
-				//Colocar;
+				turret = turrets[0];
 				break;
 			case "Dom":
 				turret = turrets[1];
