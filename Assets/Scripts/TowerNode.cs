@@ -22,7 +22,7 @@ public class TowerNode : MonoBehaviour {
 	}
 
 	void OnMouseEnter() {
-		rend.material.color = color;	
+		rend.material.color = color;
 	}
 
 	void OnMouseExit() {

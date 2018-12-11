@@ -99,7 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ballTag: Black
   shotFrequence: 2
-  ballPrefab: {fileID: 0}
+  ballPrefab: {fileID: 1988707020201788, guid: 45b0ba2d8f1458948a97996271325343, type: 2}
   rend: {fileID: 23685928982462894}
   color: {r: 0, g: 0, b: 0, a: 0}
   objPooler: {fileID: 114316573760626608}
@@ -117,7 +117,7 @@ MonoBehaviour:
   pooledObject: {fileID: 1988707020201788, guid: 45b0ba2d8f1458948a97996271325343,
     type: 2}
   pooledAmount: 15
-  willGrow: 1
+  willGrow: 0
 --- !u!136 &136773103506655342
 CapsuleCollider:
   m_ObjectHideFlags: 1

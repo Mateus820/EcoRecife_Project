@@ -22,10 +22,10 @@ GameObject:
   - component: {fileID: 33045775002855244}
   - component: {fileID: 23448701789026422}
   - component: {fileID: 136408456418409432}
-  - component: {fileID: 114570390799658458}
+  - component: {fileID: 114644130234911116}
   - component: {fileID: 114661604165708472}
   m_Layer: 0
-  m_Name: TowerPrefab
+  m_Name: OrangeTurret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1808373091126802}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -23.66, y: 6.43, z: -29.466194}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -86,7 +86,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1808373091126802}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &114570390799658458
+--- !u!114 &114644130234911116
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -94,10 +94,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1808373091126802}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d893490925e374c48b7c63fb3c6b440e, type: 3}
+  m_Script: {fileID: 11500000, guid: fd8c9430cdadb614285b028d0ac58a0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tw: {fileID: 11400000, guid: 50152e58b32dbf543a7f41c282fc9e54, type: 2}
+  ballTag: Orange
+  shotFrequence: 0.4
+  ballPrefab: {fileID: 1454083706302144, guid: 39e26c1c5b0371f4eba758ca8487c36e, type: 2}
+  rend: {fileID: 23448701789026422}
+  color: {r: 1, g: 0.5, b: 0, a: 0}
   objPooler: {fileID: 114661604165708472}
 --- !u!114 &114661604165708472
 MonoBehaviour:
@@ -112,8 +116,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pooledObject: {fileID: 1454083706302144, guid: 39e26c1c5b0371f4eba758ca8487c36e,
     type: 2}
-  pooledAmount: 50
-  willGrow: 1
+  pooledAmount: 30
+  willGrow: 0
 --- !u!136 &136408456418409432
 CapsuleCollider:
   m_ObjectHideFlags: 1

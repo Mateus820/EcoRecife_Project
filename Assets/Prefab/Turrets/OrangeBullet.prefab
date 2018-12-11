@@ -113,8 +113,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ballForce: 500
-  rb: {fileID: 54629942658787944}
   damage: 0.2
+  clampValue: 10
+  rb: {fileID: 54629942658787944}
 --- !u!135 &135169567570356734
 SphereCollider:
   m_ObjectHideFlags: 1

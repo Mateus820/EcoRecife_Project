@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 135115806768245704}
   - component: {fileID: 54618280418825504}
   - component: {fileID: 114581621029183794}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: BlackBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -113,8 +113,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ballForce: 300
-  rb: {fileID: 54618280418825504}
   damage: 2
+  clampValue: 0
+  rb: {fileID: 54618280418825504}
 --- !u!135 &135115806768245704
 SphereCollider:
   m_ObjectHideFlags: 1
