@@ -10,6 +10,7 @@ public class TowerNode : MonoBehaviour {
 	[SerializeField] private Color startColor;
 	[SerializeField] private Renderer rend;
 	[SerializeField] private Vector3 towerOffset;
+	public Draggable draggingToMe;
 	
 	void OnMouseDown() {
 		if(curTurret != null){
@@ -23,9 +24,25 @@ public class TowerNode : MonoBehaviour {
 
 	void OnMouseEnter() {
 		rend.material.color = color;
+		for(int i = 0; i < Singleton.GetInstance.dgs.Length;i++)
+		{
+			if(Singleton.GetInstance.dgs[i].isDragging)
+			{
+				draggingToMe = Singleton.GetInstance.dgs[i];
+				break;
+			}
+		}
+		if(draggingToMe != null)
+		{
+		draggingToMe.nodeOrBar = true;
+		}
+		
 	}
 
 	void OnMouseExit() {
 		rend.material.color = startColor;
+		draggingToMe.nodeOrBar = false;
+		draggingToMe =  null;
+
 	}
 }

@@ -12,7 +12,7 @@ public class CamController : MonoBehaviour {
 	[SerializeField] private float verticalRotationBound;
 	void Start() {
 
-		Cursor.lockState = CursorLockMode.Locked;
+		//Cursor.lockState = CursorLockMode.Locked;
 			}
 	
 	// Update is called once per frame
