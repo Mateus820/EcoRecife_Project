@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class EnemyController : MonoBehaviour {
 
+	[SerializeField] private float basicHealth;
 	[SerializeField] private float curHealth;
 	[SerializeField] private float speed;
 	[SerializeField] private bool direction;
@@ -16,7 +17,7 @@ public class EnemyController : MonoBehaviour {
 	void OnEnable() {
 		int random = Random.Range(0, enemiesTag.Length);
 		gameObject.tag = enemiesTag[random];
-		print(enemiesTag[random]);
+		curHealth = basicHealth;
 		curColor = GetComponent<Renderer>().material.color = colors[random];
 	}
 
