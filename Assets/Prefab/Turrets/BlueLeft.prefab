@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 135285278538334438}
   - component: {fileID: 54704739425345220}
   - component: {fileID: 114536496350401510}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: BlueLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ Transform:
   m_GameObject: {fileID: 1057799428416490}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -113,7 +113,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  speedToTarget: 3
+  damage: 0
+  speedToTarget: 5
   rb: {fileID: 54704739425345220}
 --- !u!135 &135285278538334438
 SphereCollider:

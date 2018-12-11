@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 135269207748100504}
   - component: {fileID: 54490401517541744}
   - component: {fileID: 114117464821206522}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: BlueRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,8 +38,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1799448139709062}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.60386, y: 12.780804, z: -24.944168}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -113,7 +113,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  speedToTarget: 3
+  damage: 0
+  speedToTarget: 5
   rb: {fileID: 54490401517541744}
 --- !u!135 &135269207748100504
 SphereCollider:

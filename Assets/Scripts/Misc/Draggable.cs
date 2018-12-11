@@ -9,6 +9,10 @@ public class Draggable : MonoBehaviour {
 	public bool isDragging;
 	public bool nodeOrBar;
 
+	public string name;
+
+	[SerializeField] public Vector3 posToBuild;
+
 	// Use this for initialization
 	void Start ()
 	 {
@@ -42,6 +46,8 @@ public class Draggable : MonoBehaviour {
 		else 
 		{
 			transform.position = startPosition;
+			BuildManager.instance.SetTurret(name);
+			var obj = Instantiate(BuildManager.instance.GetTurretToBuild, posToBuild, Quaternion.identity);
 			gameObject.SetActive(false);
 		}
 

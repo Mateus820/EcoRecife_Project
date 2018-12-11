@@ -19,22 +19,6 @@ public class BuildManager : MonoBehaviour {
 		instance = this;	
 	}
 
-	void Update() {
-
-		if(Input.GetKeyDown(KeyCode.Alpha1)){
-			turret = turrets[0];
-			print(1);
-		}
-		else if(Input.GetKeyDown(KeyCode.Alpha2)){
-			turret = turrets[1];
-			print(2);
-		}
-		else if(Input.GetKeyDown(KeyCode.Alpha4)){
-			turret = turrets[3];
-			print(4);
-		}
-	}
-
 	public void SetTurret(string turretName){
 		switch(turretName){
 			case "Riso":
