@@ -56,6 +56,6 @@ public class EnemyController : MonoBehaviour {
 	{
 		GetComponent<Renderer>().material.color = Color.magenta;
 		yield return new WaitForSeconds(1f);
-		GetComponent<Renderer>().material.color = colors[0];
+		GetComponent<Renderer>().material.color = curColor;
 	}
 }

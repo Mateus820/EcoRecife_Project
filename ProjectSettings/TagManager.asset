@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - Black
   - DeathBall
+  - Blue
   layers:
   - Default
   - TransparentFX
