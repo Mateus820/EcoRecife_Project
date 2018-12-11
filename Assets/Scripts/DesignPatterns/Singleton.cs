@@ -6,6 +6,8 @@ public class Singleton : MonoBehaviour {
 
 	private static Singleton instance;
 	
+	public Draggable[] dgs;
+	
 	public static Singleton GetInstance{
 		get{
 			if(instance == null){
