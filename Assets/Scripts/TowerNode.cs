@@ -18,6 +18,7 @@ public class TowerNode : MonoBehaviour {
 		}
 		Vector3 pos = new Vector3(transform.position.x + towerOffset.x, transform.position.y + towerOffset.y, transform.position.z + towerOffset.z);
 		var obj = Instantiate(BuildManager.instance.GetTurretToBuild, pos, Quaternion.identity);
+		curTurret = BuildManager.instance.GetTurretToBuild;
 	}
 
 	void OnMouseEnter() {
