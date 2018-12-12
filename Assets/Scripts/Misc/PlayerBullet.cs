@@ -11,10 +11,17 @@ public class PlayerBullet : MonoBehaviour {
 [SerializeField] private float radius;
 
 [SerializeField] private LayerMask whatToCollide;
+
+private string[] enemyTags;
 private RaycastHit hit;
 		void Start () 
 	{
+		enemyTags = new string[4];
+		enemyTags[0] = "Orange";
+		enemyTags[1] = "Blue";
+		enemyTags[2] = "Black";
 		
+
 	}
 	
 	// Update is called once per frame
@@ -26,13 +33,16 @@ private RaycastHit hit;
 	{
 		
 			transform.Translate(transform.forward * bulletSpeed, Space.World);
+
 			if(Physics.SphereCast(transform.position ,radius, transform.forward ,out hit ,distance ,whatToCollide))
 			{
-				
-				if(hit.collider.gameObject.tag == "Orange")
+				for(int i = 0; i < enemyTags.Length;i++)
 				{
-					hit.collider.gameObject.SendMessage("DecreaseLife", damage , SendMessageOptions.DontRequireReceiver);
-					gameObject.SetActive(false);
+					if(hit.collider.gameObject.tag == enemyTags[i])
+					{
+						hit.collider.gameObject.SendMessage("DecreaseLife", damage , SendMessageOptions.DontRequireReceiver);
+						gameObject.SetActive(false);
+					}
 				}
 			}
 

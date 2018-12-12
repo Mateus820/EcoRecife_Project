@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114644130234911116}
   - component: {fileID: 114661604165708472}
   m_Layer: 0
-  m_Name: OrangeTurret
+  m_Name: Dom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

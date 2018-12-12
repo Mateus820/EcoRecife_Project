@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114078752824754792}
   - component: {fileID: 114152979286181908}
   m_Layer: 0
-  m_Name: BlueTurret
+  m_Name: Riso
   m_TagString: Blue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

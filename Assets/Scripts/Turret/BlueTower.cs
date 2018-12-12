@@ -32,8 +32,6 @@ public class BlueTower : MonoBehaviour {
 			var objRight = objPoolerR.GetPooledObject();
 			var objLeft = objPoolerL.GetPooledObject();
 
-			print(objRight);
-
 			if(obj != null){
 				obj.transform.position = transform.position;
 				obj.tag = ballTag;

@@ -7,7 +7,11 @@ public class Singleton : MonoBehaviour {
 	private static Singleton instance;
 	
 	public Draggable[] dgs;
+
+	public GameObject[] turretUI;
 	
+	public PlayerHealth health;
+
 	public static Singleton GetInstance{
 		get{
 			if(instance == null){

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
+
 public class Draggable : MonoBehaviour {
 
 	private Vector3 startPosition;
@@ -11,23 +12,19 @@ public class Draggable : MonoBehaviour {
 
 	public string name;
 
-	[SerializeField] public Vector3 posToBuild;
+	[HideInInspector]public GameObject obj;
 
-	// Use this for initialization
+	 [HideInInspector]public Vector3 posToBuild;
+
 	void Start ()
-	 {
+	{
 		 isDragging = false;
-
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+		 startPosition = transform.position;
 	}
 
 	public void BeginDrag()
 	{
-		startPosition = transform.position;
+		
 		isDragging = true;
 	}
 
@@ -47,10 +44,9 @@ public class Draggable : MonoBehaviour {
 		{
 			transform.position = startPosition;
 			BuildManager.instance.SetTurret(name);
-			var obj = Instantiate(BuildManager.instance.GetTurretToBuild, posToBuild, Quaternion.identity);
+			obj = Instantiate(BuildManager.instance.GetTurretToBuild, posToBuild, Quaternion.identity);
 			gameObject.SetActive(false);
 		}
-
 		isDragging = false;
 
 	}

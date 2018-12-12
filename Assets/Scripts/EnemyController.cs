@@ -41,7 +41,10 @@ public class EnemyController : MonoBehaviour {
 
 	void OnCollisionEnter(Collision other) {
 		if(other.gameObject.tag == "DeathWall")
+		{
 			gameObject.SetActive(false);
+			Singleton.GetInstance.health.curHealth--;
+		}
 	}
 
 	void OnMouseEnter() {

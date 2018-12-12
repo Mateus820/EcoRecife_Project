@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114102693312392606}
   - component: {fileID: 114316573760626608}
   m_Layer: 0
-  m_Name: BlackTurret
+  m_Name: Otto
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
