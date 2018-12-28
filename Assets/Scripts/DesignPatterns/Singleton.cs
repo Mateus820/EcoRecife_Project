@@ -7,6 +7,8 @@ public class Singleton : MonoBehaviour {
 	private static Singleton instance;
 	
 	public Transform[] lanes; 
+
+	public WaveScript waveScript;
 	
 	public Draggable[] dgs;
 

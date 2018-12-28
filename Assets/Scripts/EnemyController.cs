@@ -15,10 +15,24 @@ public class EnemyController : MonoBehaviour {
 	private Color curColor;
 
 	void OnEnable() {
-		int random = Random.Range(0, enemiesTag.Length);
-		gameObject.tag = enemiesTag[random];
+		
 		curHealth = basicHealth;
-		curColor = GetComponent<Renderer>().material.color = colors[random];
+
+		switch (gameObject.tag)
+		{
+		case "Orange" :
+		curColor = GetComponent<Renderer>().material.color = colors[0];
+		break;
+
+		case "Blue" :
+		curColor = GetComponent<Renderer>().material.color = colors[1];
+		break;
+
+		case "Black" : 
+		curColor = GetComponent<Renderer>().material.color = colors[2];
+		break;
+		}
+
 	}
 
 	void FixedUpdate () {
@@ -34,6 +48,7 @@ public class EnemyController : MonoBehaviour {
 		StartCoroutine(TakingDamage());
 		curHealth -= damage;
 		if(curHealth <= 0){
+			Singleton.GetInstance.waveScript.waveMonsterCount[Singleton.GetInstance.waveScript.wave]--;
 			gameObject.SetActive(false);
 			return;
 		}
@@ -42,6 +57,7 @@ public class EnemyController : MonoBehaviour {
 	void OnCollisionEnter(Collision other) {
 		if(other.gameObject.tag == "DeathWall")
 		{
+			Singleton.GetInstance.waveScript.waveMonsterCount[Singleton.GetInstance.waveScript.wave]--;
 			gameObject.SetActive(false);
 			Singleton.GetInstance.health.curHealth--;
 		}
