@@ -19,6 +19,12 @@ public class WaveScript : MonoBehaviour
     private int lane;
     private string monsterColor;
 
+    private int[] randomized;
+
+    private List<int> index;
+
+    
+
 
     void Start()
     {
@@ -26,6 +32,8 @@ public class WaveScript : MonoBehaviour
           waveMonsters = new string[5];
           waveMonstersSpawnPoint =  new string[5];
           wave = 0;
+          index = new List<int>();
+          
          
           stageScene = SceneManager.GetActiveScene();
 
@@ -352,8 +360,9 @@ public class WaveScript : MonoBehaviour
         for (int i = 0; i < monstersToSpawn.Length; i++)
         {
             //checando cor
-            switch(monstersToSpawn[i])
+            switch(monstersToSpawn[randomized[i]])
             {
+              
                 case 'l':
                 monsterColor = "Orange";
                 break ;
@@ -377,15 +386,16 @@ public class WaveScript : MonoBehaviour
             }
 
             //checando lane
-             switch(spawnLane[i])
+             switch(spawnLane[randomized[i]])
             {
                 case ',':
                //apneas uma virgula, ignore
                 lane = 6;
+               
                 break ;
 
                 default:
-                lane = (int)System.Char.GetNumericValue(spawnLane[i]);
+                lane = (int)System.Char.GetNumericValue(spawnLane[randomized[i]]);
                 break;
             }
             if(monsterColor != null && lane <= 5)
@@ -399,12 +409,28 @@ public class WaveScript : MonoBehaviour
 
     void Spawn(string monsterColor , int lane)
     {   
-        
+      
         GameObject obj = objPooler.GetPooledObject();
         obj.tag = monsterColor;
         obj.transform.position = Singleton.GetInstance.lanes[lane].position;
         obj.SetActive(true);
+    }
 
+    void Randomizer(int extension)
+    {
+        randomized = new int[extension];
+        
+        for (int i = 0; i < extension; i++)
+        {
+            index.Add(i);
+        }
+
+        for (int i = 0; i < extension; i++)
+        {
+            int r = Random.Range(0,index.Count);
+            randomized[i] = index[r];
+            index.RemoveAt(r);
+        } 
 
     }
 
@@ -412,9 +438,10 @@ public class WaveScript : MonoBehaviour
     {  
         for(;;)
         {
-            print("wave : " + wave +" / monster remaining : " + waveMonsterCount[wave]);
+          
             if(!started)
             {
+            Randomizer(waveMonsters[wave].Length);    
             StartCoroutine(Wave(waveMonsters[wave],waveMonstersSpawnPoint[wave]));
              started = true;
             }   
@@ -425,6 +452,7 @@ public class WaveScript : MonoBehaviour
                  {
                      print("fim da fase");
                  }
+                 Randomizer(waveMonsters.Length);
                 StartCoroutine(Wave(waveMonsters[wave],waveMonstersSpawnPoint[wave]));                
                 }
         yield return new WaitForSeconds(0.05f);
