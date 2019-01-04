@@ -17,7 +17,7 @@ public class EnemyController : MonoBehaviour {
 	void OnEnable() {
 		
 		curHealth = basicHealth;
-
+		
 		switch (gameObject.tag)
 		{
 		case "Orange" :

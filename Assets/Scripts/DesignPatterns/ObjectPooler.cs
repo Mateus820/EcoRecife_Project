@@ -15,10 +15,6 @@ public class ObjectPooler : MonoBehaviour {
 		for(int i = 0; i < pooledAmount; i++)
 			Create();
 
-		foreach (var item in pooledObjects)
-		{
-			print(item);
-		}
 	}
 
 	void Create(){
