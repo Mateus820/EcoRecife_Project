@@ -9,6 +9,7 @@ public class TurretBullet : MonoBehaviour {
 	[SerializeField] private float damage;
 	[SerializeField] private float clampValue;
 	[SerializeField] private Rigidbody rb;
+	[SerializeField] private GameObject particles;
 
 	void OnEnable() {
 		rb.velocity = new Vector3(0, 0, Mathf.Clamp(rb.velocity.z, 0, clampValue));
@@ -17,6 +18,8 @@ public class TurretBullet : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other) {
 		
+		Instantiate(particles,transform.position,Quaternion.identity);
+
 		if(other.gameObject.tag == gameObject.tag){
 			gameObject.SetActive(false);
 			other.gameObject.GetComponent<EnemyController>().DecreaseLife(damage * 2);

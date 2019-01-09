@@ -434,6 +434,14 @@ public class WaveScript : MonoBehaviour
 
     }
 
+    IEnumerator BossApearing()
+    {
+        yield return new WaitForSeconds(5f);
+         Randomizer(waveMonsters[wave].Length);    
+         StartCoroutine(Wave(waveMonsters[wave],waveMonstersSpawnPoint[wave]));
+
+    }
+
     IEnumerator ManagingWaves()
     {  
         for(;;)
@@ -442,8 +450,7 @@ public class WaveScript : MonoBehaviour
           print(waveMonsterCount[wave] + " monster remaining in " + aaaa + "° wave");
             if(!started)
             {
-            Randomizer(waveMonsters[wave].Length);    
-            StartCoroutine(Wave(waveMonsters[wave],waveMonstersSpawnPoint[wave]));
+                StartCoroutine(BossApearing());
              started = true;
             }   
              if(waveMonsterCount[wave] == 0)
@@ -453,8 +460,7 @@ public class WaveScript : MonoBehaviour
                  {
                      print("fim da fase");
                  }
-                 Randomizer(waveMonsters.Length);
-                StartCoroutine(Wave(waveMonsters[wave],waveMonstersSpawnPoint[wave]));                
+                 StartCoroutine(BossApearing());                
                 }
         yield return new WaitForSeconds(0.05f);
         }

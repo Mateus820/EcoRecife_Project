@@ -12,6 +12,8 @@ public class PlayerBullet : MonoBehaviour {
 
 [SerializeField] private LayerMask whatToCollide;
 
+[SerializeField] private GameObject particles;
+
 private string[] enemyTags;
 private RaycastHit hit;
 		void Start () 
@@ -25,10 +27,6 @@ private RaycastHit hit;
 	}
 	
 	// Update is called once per frame
-	void Update () 
-	{
-		
-	}
 	private void FixedUpdate() 
 	{
 		
@@ -40,6 +38,7 @@ private RaycastHit hit;
 				{
 					if(hit.collider.gameObject.tag == enemyTags[i])
 					{
+						Instantiate(particles,transform.position , Quaternion.identity);
 						hit.collider.gameObject.SendMessage("DecreaseLife", damage , SendMessageOptions.DontRequireReceiver);
 						gameObject.SetActive(false);
 					}
