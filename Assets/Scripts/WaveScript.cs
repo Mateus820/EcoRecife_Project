@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class WaveScript : MonoBehaviour
 {
     private Scene stageScene;
+    private int stage;
     [HideInInspector] public int[] waveMonsterCount;
     public int wave;   
     private bool started;
@@ -48,12 +49,14 @@ public class WaveScript : MonoBehaviour
            stage 9 - dom, jo, otto e riso
            stage 10 - dom, jo, otto e riso*/
 
+           // a variavel de stage é o verdadeiro stage -1 pois será usada num array posteriormente no Script : LevelSelection
+
            #region Stage 1 
 
            if(stageScene.name == "Stage1")
            {  
               print("starting stage 1");              
-
+                stage = 0;
                /*aqui indicará o numero de monstros de cada wave ,sempre q um monstro morrer,
                irá retirar um. se chegar a zero, vamos à prox wave*/
                waveMonsterCount[0] = 2;
@@ -78,7 +81,8 @@ public class WaveScript : MonoBehaviour
            #region Stage 2 
 
              if(stageScene.name == "Stage2")
-           {                
+           {     
+               stage = 1;           
                /*aqui indicará o numero de monstros de cada wave ,sempre q um monstro morrer,
                irá retirar um. se chegar a zero, vamos à prox wave*/
                waveMonsterCount[0] = 2;
@@ -109,7 +113,8 @@ public class WaveScript : MonoBehaviour
            #region Stage 3
 
              if(stageScene.name == "Stage3")
-           {                
+           {   
+               stage = 2;             
                /*aqui indicará o numero de monstros de cada wave ,sempre q um monstro morrer,
                irá retirar um. se chegar a zero, vamos à prox wave*/
                waveMonsterCount[0] = 4;
@@ -140,7 +145,8 @@ public class WaveScript : MonoBehaviour
             #region Stage 4
 
              if(stageScene.name == "Stage4")
-           {                
+           {             
+               stage = 3;   
                /*aqui indicará o numero de monstros de cada wave ,sempre q um monstro morrer,
                irá retirar um. se chegar a zero, vamos à prox wave*/
                waveMonsterCount[0] = 5;
@@ -171,7 +177,8 @@ public class WaveScript : MonoBehaviour
            #region Stage 5
 
              if(stageScene.name == "Stage5")
-           {                
+           {     
+               stage = 4;           
                /*aqui indicará o numero de monstros de cada wave ,sempre q um monstro morrer,
                irá retirar um. se chegar a zero, vamos à prox wave*/
                waveMonsterCount[0] = 6;
@@ -202,7 +209,8 @@ public class WaveScript : MonoBehaviour
            #region Stage 6
 
              if(stageScene.name == "Stage6")
-           {                
+           {        
+               stage = 5;
                /*aqui indicará o numero de monstros de cada wave ,sempre q um monstro morrer,
                irá retirar um. se chegar a zero, vamos à prox wave*/
                waveMonsterCount[0] = 6;
@@ -233,7 +241,8 @@ public class WaveScript : MonoBehaviour
            #region Stage 7
 
              if(stageScene.name == "Stage7")
-           {                
+           {        
+               stage = 6;        
                /*aqui indicará o numero de monstros de cada wave ,sempre q um monstro morrer,
                irá retirar um. se chegar a zero, vamos à prox wave*/
                waveMonsterCount[0] = 7;
@@ -264,7 +273,8 @@ public class WaveScript : MonoBehaviour
            #region Stage 8
 
              if(stageScene.name == "Stage8")
-           {                
+           {      
+               stage = 7;          
                /*aqui indicará o numero de monstros de cada wave ,sempre q um monstro morrer,
                irá retirar um. se chegar a zero, vamos à prox wave*/
                waveMonsterCount[0] = 7;
@@ -294,7 +304,8 @@ public class WaveScript : MonoBehaviour
            #region Stage 9
 
              if(stageScene.name == "Stage9")
-           {                
+           {    
+               stage = 8;            
                /*aqui indicará o numero de monstros de cada wave ,sempre q um monstro morrer,
                irá retirar um. se chegar a zero, vamos à prox wave*/
                waveMonsterCount[0] = 9;
@@ -324,7 +335,8 @@ public class WaveScript : MonoBehaviour
            #region Stage 10
 
              if(stageScene.name == "Stage10")
-           {                
+           {      
+               stage = 9;          
                /*aqui indicará o numero de monstros de cada wave ,sempre q um monstro morrer,
                irá retirar um. se chegar a zero, vamos à prox wave*/
                waveMonsterCount[0] = 12;
@@ -459,6 +471,15 @@ public class WaveScript : MonoBehaviour
                  if(wave == 5)
                  {
                      print("fim da fase");
+                     if(stage == PlayerPrefs.GetInt("LevelsCleared"))
+                     {
+                         int plusOneLevelCleared = PlayerPrefs.GetInt("LevelsCleared");
+                         plusOneLevelCleared++;
+                         PlayerPrefs.SetInt("LevelsCleared" , plusOneLevelCleared);
+                         PlayerPrefs.Save();                         
+                     }
+                     SceneManager.LoadScene("LevelSelection");
+                     
                  }
                  StartCoroutine(BossApearing());                
                 }

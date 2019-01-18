@@ -126,7 +126,8 @@ MonoBehaviour:
   damage: 2
   clampValue: 0
   rb: {fileID: 54618280418825504}
-  part: {fileID: 6929160148628799112, guid: 5554951f46e8ee34fb134d0530d4ccc8, type: 3}
+  particles: {fileID: 6929160148628799112, guid: 5554951f46e8ee34fb134d0530d4ccc8,
+    type: 3}
 --- !u!1 &2590518955477218221
 GameObject:
   m_ObjectHideFlags: 0
