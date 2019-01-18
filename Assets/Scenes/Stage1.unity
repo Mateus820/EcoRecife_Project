@@ -2322,7 +2322,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1084549113}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4ebae84153fdb2f4abb01677b9aa463d, type: 3}
   m_Name: 
@@ -2357,6 +2357,7 @@ MonoBehaviour:
   - {fileID: 1084549086}
   - {fileID: 1084549085}
   - {fileID: 1084549084}
+  framesToSkip: 9
 --- !u!114 &1141727739 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114991790574837670, guid: a8d8c9a6d581c544ca57ee4af99bfb60,
