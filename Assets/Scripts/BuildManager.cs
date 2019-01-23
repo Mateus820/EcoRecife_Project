@@ -28,7 +28,7 @@ public class BuildManager : MonoBehaviour {
 				turret = turrets[1];
 				break;
 			case "Jo":
-				//Colocar;
+				turret = turrets[2];
 				break;
 			case "Otto":
 				turret = turrets[3];

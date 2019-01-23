@@ -2559,7 +2559,7 @@ MonoBehaviour:
   turrets:
   - {fileID: 1035075106246312, guid: e1e01d43fac44cf459e9dd4bdb2c6777, type: 3}
   - {fileID: 1808373091126802, guid: 6dac94f0651436c4cab8d564709ed6f2, type: 3}
-  - {fileID: 0}
+  - {fileID: 7251722221740404658, guid: f86382d2afd61a64abe34da2787556e4, type: 3}
   - {fileID: 1380956459593490, guid: 12cb4573553cbe1498effe4c4b689443, type: 3}
 --- !u!1 &1485698339
 GameObject:

@@ -6,7 +6,7 @@ public class SimpleTower : MonoBehaviour {
 
 	[SerializeField] private string ballTag;
 	[SerializeField] private float shotFrequence;
-	[SerializeField] private GameObject ballPrefab;
+	//[SerializeField] private GameObject ballPrefab;
 	[SerializeField] private Renderer rend;
 	[SerializeField] private Color color; //Temporario;
 	[SerializeField] private ObjectPooler objPooler;
@@ -29,7 +29,6 @@ public class SimpleTower : MonoBehaviour {
 			else{
 				print("There isn't balls to shot!");
 			}
-			//obj.GetComponent<TurretBullet>().damage = tw.damage;
 			//colocar o prefab da bola que atira;
 		}
 	}

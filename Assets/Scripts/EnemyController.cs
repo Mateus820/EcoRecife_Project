@@ -8,6 +8,7 @@ public class EnemyController : MonoBehaviour {
 	[SerializeField] private float basicHealth;
 	[SerializeField] private float curHealth;
 	[SerializeField] private float speed;
+	[SerializeField] private bool stuned;
 	[SerializeField] private bool direction;
 	[SerializeField] private Rigidbody rb;
 	[SerializeField] private string[] enemiesTag;
@@ -17,6 +18,7 @@ public class EnemyController : MonoBehaviour {
 	void OnEnable() {
 		
 		curHealth = basicHealth;
+		stuned = false;
 		
 		switch (gameObject.tag)
 		{
@@ -40,7 +42,8 @@ public class EnemyController : MonoBehaviour {
 		if(direction) x = 1;
 		else x = -1;
 
-		rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, x * speed);
+		if(!stuned)
+			rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, x * speed);
 	}
 
 	public void DecreaseLife(float damage){
@@ -61,6 +64,11 @@ public class EnemyController : MonoBehaviour {
 			gameObject.SetActive(false);
 			Singleton.GetInstance.health.curHealth--;
 		}
+		else if(other.gameObject.tag == "Jo")
+		{
+			StartCoroutine(Stun());
+			print("Joooooooo");
+		}
 	}
 
 	void OnMouseEnter() {
@@ -69,6 +77,12 @@ public class EnemyController : MonoBehaviour {
 
 	void OnMouseExit() {
 		GetComponent<Renderer>().material.color = curColor;
+	}
+
+	IEnumerator Stun(){
+		stuned = true;
+		yield return new WaitForSeconds(10f);
+		stuned = false;
 	}
 
 	IEnumerator TakingDamage()

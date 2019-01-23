@@ -10,6 +10,7 @@ TagManager:
   - Black
   - DeathBall
   - Blue
+  - Jo
   layers:
   - Default
   - TransparentFX
