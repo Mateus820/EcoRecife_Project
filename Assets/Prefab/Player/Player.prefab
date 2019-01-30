@@ -1162,7 +1162,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
+  m_BackGroundColor: {r: 0.23589355, g: 0.63082653, b: 0.8773585, a: 0}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
@@ -1183,7 +1183,7 @@ Camera:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294966783
-  m_RenderingPath: -1
+  m_RenderingPath: 1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
@@ -1319,6 +1319,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shotCooldown: 0.3
+  rightClaw: {fileID: 3578414386901824652}
+  leftClaw: {fileID: 6110640298955689946}
 --- !u!114 &114731139154237578
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1415,7 +1417,7 @@ Camera:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 512
-  m_RenderingPath: -1
+  m_RenderingPath: 1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
@@ -1443,7 +1445,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100022, guid: 04e67a9174def0945ae1e44ba8e1473d, type: 3}
       propertyPath: m_Name
-      value: garrinha animada V1.1
+      value: RightClaw
       objectReference: {fileID: 0}
     - target: {fileID: 100022, guid: 04e67a9174def0945ae1e44ba8e1473d, type: 3}
       propertyPath: m_Layer
@@ -1549,8 +1551,18 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: -0.19
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 04e67a9174def0945ae1e44ba8e1473d, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: fdfc7d76351626f469a4f45b05fc6d4b, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 04e67a9174def0945ae1e44ba8e1473d, type: 3}
+--- !u!95 &3578414386901824652 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 9500000, guid: 04e67a9174def0945ae1e44ba8e1473d,
+    type: 3}
+  m_PrefabInstance: {fileID: 3578414386911298028}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3578414386910911354 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400022, guid: 04e67a9174def0945ae1e44ba8e1473d,
@@ -1566,7 +1578,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100022, guid: 04e67a9174def0945ae1e44ba8e1473d, type: 3}
       propertyPath: m_Name
-      value: garrinha animada V1.1 (1)
+      value: LeftClaw
       objectReference: {fileID: 0}
     - target: {fileID: 100022, guid: 04e67a9174def0945ae1e44ba8e1473d, type: 3}
       propertyPath: m_Layer
@@ -1672,11 +1684,21 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: -0.19
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 04e67a9174def0945ae1e44ba8e1473d, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: c62371119b96e0a46a05a9b4ebf9a99c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 04e67a9174def0945ae1e44ba8e1473d, type: 3}
 --- !u!4 &6110640298963378220 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400022, guid: 04e67a9174def0945ae1e44ba8e1473d,
+    type: 3}
+  m_PrefabInstance: {fileID: 6110640298962991802}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &6110640298955689946 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 9500000, guid: 04e67a9174def0945ae1e44ba8e1473d,
     type: 3}
   m_PrefabInstance: {fileID: 6110640298962991802}
   m_PrefabAsset: {fileID: 0}

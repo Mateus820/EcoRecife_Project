@@ -18,21 +18,20 @@ public class EnemyController : MonoBehaviour {
 	void OnEnable() {
 		
 		curHealth = basicHealth;
-		stuned = false;
 		
 		switch (gameObject.tag)
 		{
-		case "Orange" :
-		curColor = GetComponent<Renderer>().material.color = colors[0];
-		break;
+			case "Orange" :
+			curColor = GetComponent<Renderer>().material.color = colors[0];
+			break;
 
-		case "Blue" :
-		curColor = GetComponent<Renderer>().material.color = colors[1];
-		break;
+			case "Blue" :
+			curColor = GetComponent<Renderer>().material.color = colors[1];
+			break;
 
-		case "Black" : 
-		curColor = GetComponent<Renderer>().material.color = colors[2];
-		break;
+			case "Black" : 
+			curColor = GetComponent<Renderer>().material.color = colors[2];
+			break;
 		}
 
 	}
@@ -42,8 +41,12 @@ public class EnemyController : MonoBehaviour {
 		if(direction) x = 1;
 		else x = -1;
 
-		if(!stuned)
+		if(!stuned){
 			rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, x * speed);
+		}
+		else{
+			rb.velocity = Vector3.zero;
+		}
 	}
 
 	public void DecreaseLife(float damage){
@@ -64,11 +67,13 @@ public class EnemyController : MonoBehaviour {
 			gameObject.SetActive(false);
 			Singleton.GetInstance.health.curHealth--;
 		}
-		else if(other.gameObject.tag == "Jo")
-		{
+	}
+
+	void OnTriggerEnter(Collider other) {
+		if(other.gameObject.tag == "Jo"){
+			print("Jo");
 			StartCoroutine(Stun());
-			print("Joooooooo");
-		}
+		}	
 	}
 
 	void OnMouseEnter() {
@@ -80,9 +85,11 @@ public class EnemyController : MonoBehaviour {
 	}
 
 	IEnumerator Stun(){
-		stuned = true;
-		yield return new WaitForSeconds(10f);
-		stuned = false;
+		if(stuned = true){
+			stuned = true;
+			yield return new WaitForSeconds(5f);
+			stuned = false;
+		}
 	}
 
 	IEnumerator TakingDamage()

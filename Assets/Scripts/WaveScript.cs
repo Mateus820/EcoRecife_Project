@@ -459,7 +459,7 @@ public class WaveScript : MonoBehaviour
         for(;;)
         {
             int aaaa = wave+1;
-          print(waveMonsterCount[wave] + " monster remaining in " + aaaa + "° wave");
+            print(waveMonsterCount[wave] + " monster remaining in " + aaaa + "° wave");
             if(!started)
             {
                 StartCoroutine(BossApearing());
