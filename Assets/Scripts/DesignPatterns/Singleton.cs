@@ -14,7 +14,7 @@ public class Singleton : MonoBehaviour {
 
 	public GameObject[] turretUI;
 	
-	public PlayerHealth health;
+	public HealthUI health;
 
 	public static Singleton GetInstance{
 		get{
