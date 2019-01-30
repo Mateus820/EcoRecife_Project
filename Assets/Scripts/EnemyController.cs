@@ -72,7 +72,9 @@ public class EnemyController : MonoBehaviour {
 	void OnTriggerEnter(Collider other) {
 		if(other.gameObject.tag == "Jo"){
 			print("Jo");
-			StartCoroutine(Stun());
+			if(!stuned){
+				StartCoroutine(Stun());
+			}
 		}	
 	}
 
@@ -85,11 +87,9 @@ public class EnemyController : MonoBehaviour {
 	}
 
 	IEnumerator Stun(){
-		if(stuned = true){
-			stuned = true;
-			yield return new WaitForSeconds(5f);
-			stuned = false;
-		}
+		stuned = true;
+		yield return new WaitForSeconds(5f);
+		stuned = false;
 	}
 
 	IEnumerator TakingDamage()
