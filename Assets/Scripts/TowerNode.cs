@@ -32,7 +32,7 @@ public class TowerNode : MonoBehaviour {
 	}
 
 	void OnMouseEnter() {
-			rend.material.color = color;
+		//	rend.material.color = color;
 
 			for(int i = 0; i < Singleton.GetInstance.dgs.Length;i++)
 			{
@@ -63,7 +63,7 @@ public class TowerNode : MonoBehaviour {
 	}
 
 	void OnMouseExit() {
-		rend.material.color = startColor;
+		//rend.material.color = startColor;
 		if(draggingToMe != null)
 		{
 			draggingToMe.nodeOrBar = false;

@@ -52,6 +52,7 @@ public class EnemyController : MonoBehaviour {
 	public void DecreaseLife(float damage){
 		
 		StartCoroutine(TakingDamage());
+		
 		curHealth -= damage;
 		if(curHealth <= 0){
 			Singleton.GetInstance.waveScript.waveMonsterCount[Singleton.GetInstance.waveScript.wave]--;

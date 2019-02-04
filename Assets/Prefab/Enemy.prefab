@@ -105,7 +105,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1, y: 1.5, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &54142831761593242
 Rigidbody:
@@ -135,9 +135,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40a98e9e99bad02448a2bac7e061c7e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  basicHealth: 3
+  basicHealth: 40
   curHealth: 3
-  speed: 3
+  speed: 1.3
+  stuned: 0
   direction: 0
   rb: {fileID: 54142831761593242}
   enemiesTag:

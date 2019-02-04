@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 114581621029183794}
   m_Layer: 13
   m_Name: BlackBullet
-  m_TagString: Untagged
+  m_TagString: Black
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
