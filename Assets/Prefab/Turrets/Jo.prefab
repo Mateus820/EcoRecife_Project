@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7251722221740404671}
   - component: {fileID: 7251722221740404656}
   - component: {fileID: 7251722221740404657}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Jo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,4 +126,4 @@ MonoBehaviour:
   pooledObject: {fileID: 7174534297935554438, guid: 606d583d78ddf6b47b72b92cb8a44bf7,
     type: 3}
   pooledAmount: 15
-  willGrow: 0
+  willGrow: 1

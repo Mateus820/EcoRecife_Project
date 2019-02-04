@@ -18,12 +18,19 @@ public class TurretBullet : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other) {
 		
-		Instantiate(particles,transform.position,Quaternion.identity);
+		//Instantiate(particles,transform.position,Quaternion.identity);
+		print(other.gameObject.name);
 
 		if(other.gameObject.tag == gameObject.tag){
 			gameObject.SetActive(false);
 			other.gameObject.GetComponent<EnemyController>().DecreaseLife(damage * 2);
 		}
+		else if (other.gameObject.tag == "Up")
+		{
+			print("sobe sobe sobe");
+			transform.position = new Vector3(transform.position.x,transform.position.y + 1.5f, transform.position.z);
+		}
+
 		else if(other.gameObject.tag == "DeathBall"){
 			gameObject.SetActive(false);
 		}
@@ -32,11 +39,7 @@ public class TurretBullet : MonoBehaviour {
 			other.gameObject.GetComponent<EnemyController>().DecreaseLife(damage);
 		}
 
-		else if (other.gameObject.tag == "Up")
-		{
-			print("sobe sobe sobe");
-			transform.position = new Vector3(transform.position.x,transform.position.y + .5f, transform.position.z);
-		}
+		
 		
 	}
 }

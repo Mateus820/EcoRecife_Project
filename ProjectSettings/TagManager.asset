@@ -12,6 +12,7 @@ TagManager:
   - Blue
   - Jo
   - Up
+  - Green
   layers:
   - Default
   - TransparentFX
@@ -28,7 +29,7 @@ TagManager:
   - Enemy
   - Bullet
   - TowerNodes
-  - 
+  - Turret
   - 
   - 
   - 

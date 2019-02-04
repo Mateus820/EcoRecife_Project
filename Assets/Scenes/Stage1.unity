@@ -467,6 +467,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: areiagua
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 7c34a6cbd50d1dc4f9ac2b8e46975688, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 7c34a6cbd50d1dc4f9ac2b8e46975688, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 7c34a6cbd50d1dc4f9ac2b8e46975688, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 7c34a6cbd50d1dc4f9ac2b8e46975688, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1
@@ -583,7 +595,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &122096274
 RectTransform:
   m_ObjectHideFlags: 0
@@ -815,6 +827,11 @@ MonoBehaviour:
   wave: 0
   spawnCooldown: 5
   objPooler: {fileID: 171427356}
+  turretsHUD:
+  - {fileID: 1485698339}
+  - {fileID: 122096273}
+  - {fileID: 2115652106}
+  - {fileID: 1593638855}
 --- !u!4 &171427355
 Transform:
   m_ObjectHideFlags: 0
@@ -2454,7 +2471,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1039973480}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.19, y: 0, z: -10.6}
+  m_LocalPosition: {x: -2.19, y: 0, z: -10.15}
   m_LocalScale: {x: 1, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 560229938}
@@ -2468,7 +2485,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1039973480}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 20, y: 1, z: 0.2}
@@ -3758,7 +3775,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1485698340
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4107,7 +4124,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1554966782}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 23.3, y: -4.178173, z: -4.8541656}
+  m_LocalPosition: {x: 23.3, y: -4.178173, z: -12.74}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4131,7 +4148,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1593638856
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4652,26 +4669,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 20583522747281352, guid: a8d8c9a6d581c544ca57ee4af99bfb60,
-        type: 3}
-      propertyPath: m_projectionMatrixMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 20583522747281352, guid: a8d8c9a6d581c544ca57ee4af99bfb60,
-        type: 3}
-      propertyPath: field of view
-      value: 95
-      objectReference: {fileID: 0}
-    - target: {fileID: 20583522747281352, guid: a8d8c9a6d581c544ca57ee4af99bfb60,
-        type: 3}
-      propertyPath: m_ClearFlags
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114991790574837670, guid: a8d8c9a6d581c544ca57ee4af99bfb60,
-        type: 3}
-      propertyPath: textHealth
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 4794505993339402, guid: a8d8c9a6d581c544ca57ee4af99bfb60, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -4682,7 +4679,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4794505993339402, guid: a8d8c9a6d581c544ca57ee4af99bfb60, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -64
+      value: -66.98
       objectReference: {fileID: 0}
     - target: {fileID: 4794505993339402, guid: a8d8c9a6d581c544ca57ee4af99bfb60, type: 3}
       propertyPath: m_LocalRotation.x
@@ -4718,60 +4715,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7417333638591426561, guid: a8d8c9a6d581c544ca57ee4af99bfb60,
         type: 3}
-      propertyPath: playerHealthSps.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 7417333638591426561, guid: a8d8c9a6d581c544ca57ee4af99bfb60,
-        type: 3}
-      propertyPath: playerHealthSps.Array.data[5]
-      value: 
-      objectReference: {fileID: 21300010, guid: c849081ea40e8a3478e281c2912db18a,
-        type: 3}
-    - target: {fileID: 7417333638591426561, guid: a8d8c9a6d581c544ca57ee4af99bfb60,
-        type: 3}
-      propertyPath: playerHealthSps.Array.data[4]
-      value: 
-      objectReference: {fileID: 21300008, guid: c849081ea40e8a3478e281c2912db18a,
-        type: 3}
-    - target: {fileID: 7417333638591426561, guid: a8d8c9a6d581c544ca57ee4af99bfb60,
-        type: 3}
-      propertyPath: playerHealthSps.Array.data[3]
-      value: 
-      objectReference: {fileID: 21300006, guid: c849081ea40e8a3478e281c2912db18a,
-        type: 3}
-    - target: {fileID: 7417333638591426561, guid: a8d8c9a6d581c544ca57ee4af99bfb60,
-        type: 3}
-      propertyPath: playerHealthSps.Array.data[2]
-      value: 
-      objectReference: {fileID: 21300004, guid: c849081ea40e8a3478e281c2912db18a,
-        type: 3}
-    - target: {fileID: 7417333638591426561, guid: a8d8c9a6d581c544ca57ee4af99bfb60,
-        type: 3}
-      propertyPath: playerHealthSps.Array.data[1]
-      value: 
-      objectReference: {fileID: 21300002, guid: c849081ea40e8a3478e281c2912db18a,
-        type: 3}
-    - target: {fileID: 7417333638591426561, guid: a8d8c9a6d581c544ca57ee4af99bfb60,
-        type: 3}
-      propertyPath: playerHealthSps.Array.data[0]
-      value: 
-      objectReference: {fileID: 21300000, guid: c849081ea40e8a3478e281c2912db18a,
-        type: 3}
-    - target: {fileID: 7417333638591426561, guid: a8d8c9a6d581c544ca57ee4af99bfb60,
-        type: 3}
-      propertyPath: maxHealth
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7417333638591426561, guid: a8d8c9a6d581c544ca57ee4af99bfb60,
-        type: 3}
       propertyPath: playerHealthUI
       value: 
       objectReference: {fileID: 1165027860}
-    - target: {fileID: 114491899647932024, guid: a8d8c9a6d581c544ca57ee4af99bfb60,
-        type: 3}
-      propertyPath: shotCooldown
-      value: 0.12
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8d8c9a6d581c544ca57ee4af99bfb60, type: 3}
 --- !u!114 &1724053772 stripped
@@ -5203,7 +5149,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2115652107
 RectTransform:
   m_ObjectHideFlags: 0

@@ -1161,7 +1161,7 @@ Camera:
   m_GameObject: {fileID: 1141007363961734}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
+  m_ClearFlags: 1
   m_BackGroundColor: {r: 0.23589355, g: 0.63082653, b: 0.8773585, a: 0}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
@@ -1318,7 +1318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f219a893c42b98408728740a8baa97a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shotCooldown: 0.3
+  shotCooldown: 0.12
   rightClaw: {fileID: 3578414386901824652}
   leftClaw: {fileID: 6110640298955689946}
 --- !u!114 &114731139154237578
@@ -1328,7 +1328,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1665486434828668}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 98a033b9057465a47aec3648dfb3a70b, type: 3}
   m_Name: 
@@ -1347,10 +1347,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5af04a1e29d5a5c499b962a3f06bdb7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealthSps: []
+  playerHealthSps:
+  - {fileID: 21300000, guid: c849081ea40e8a3478e281c2912db18a, type: 3}
+  - {fileID: 21300002, guid: c849081ea40e8a3478e281c2912db18a, type: 3}
+  - {fileID: 21300004, guid: c849081ea40e8a3478e281c2912db18a, type: 3}
+  - {fileID: 21300006, guid: c849081ea40e8a3478e281c2912db18a, type: 3}
+  - {fileID: 21300008, guid: c849081ea40e8a3478e281c2912db18a, type: 3}
+  - {fileID: 21300010, guid: c849081ea40e8a3478e281c2912db18a, type: 3}
   playerHealthUI: {fileID: 0}
   curHealth: 0
-  maxHealth: 0
+  maxHealth: 5
 --- !u!1 &1819677270571080
 GameObject:
   m_ObjectHideFlags: 0

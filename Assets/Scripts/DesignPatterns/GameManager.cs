@@ -25,7 +25,6 @@ public class GameManager : MonoBehaviour
             default :
             audio.Play("Gameplay Theme");
             break;
-
             }
 
     }

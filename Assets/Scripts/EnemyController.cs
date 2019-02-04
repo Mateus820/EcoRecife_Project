@@ -32,6 +32,12 @@ public class EnemyController : MonoBehaviour {
 			case "Black" : 
 			curColor = GetComponent<Renderer>().material.color = colors[2];
 			break;
+
+			case "Green" : 
+			curColor = GetComponent<Renderer>().material.color = colors[3];
+			break;
+
+
 		}
 
 	}

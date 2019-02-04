@@ -24,7 +24,8 @@ public class WaveScript : MonoBehaviour
 
     private List<int> index;
 
-    
+    //turrets available
+    [SerializeField] private GameObject[] turretsHUD;  
 
 
     void Start()
@@ -70,7 +71,7 @@ public class WaveScript : MonoBehaviour
                 waveMonstersSpawnPoint[0] = "0,2";
                 waveMonstersSpawnPoint[1] = "1,3";
                 waveMonstersSpawnPoint[2] = "0,0";
-
+              TurretsAvailable();  
               StartCoroutine(ManagingWaves());
 
                
@@ -102,7 +103,7 @@ public class WaveScript : MonoBehaviour
                 waveMonstersSpawnPoint[2] = "1,2,4";
                 waveMonstersSpawnPoint[3] = "0,0,2";
                 waveMonstersSpawnPoint[4] = "0,1,3,4";
-
+               TurretsAvailable(); 
               StartCoroutine(ManagingWaves());
               
            }
@@ -134,7 +135,7 @@ public class WaveScript : MonoBehaviour
                 waveMonstersSpawnPoint[2] = "0,0,3,4";
                 waveMonstersSpawnPoint[3] = "0,1,2,3,3";
                 waveMonstersSpawnPoint[4] = "0,1,2,3,4";
-
+                TurretsAvailable();
               StartCoroutine(ManagingWaves());
               
            }
@@ -166,7 +167,7 @@ public class WaveScript : MonoBehaviour
                 waveMonstersSpawnPoint[2] = "0,0,2,3,4";
                 waveMonstersSpawnPoint[3] = "0,0,1,1,4";
                 waveMonstersSpawnPoint[4] = "0,1,2,3,4";
-
+                TurretsAvailable();
               StartCoroutine(ManagingWaves());
               
            }
@@ -198,7 +199,7 @@ public class WaveScript : MonoBehaviour
                 waveMonstersSpawnPoint[2] = "0,2,3,3,4,4";
                 waveMonstersSpawnPoint[3] = "0,2,3,3,4,4";
                 waveMonstersSpawnPoint[4] = "0,1,3,3,4,4";
-
+                TurretsAvailable();
               StartCoroutine(ManagingWaves());
               
            }
@@ -230,7 +231,7 @@ public class WaveScript : MonoBehaviour
                 waveMonstersSpawnPoint[2] = "0,0,1,1,4,4";
                 waveMonstersSpawnPoint[3] = "0,1,2,3,4,4";
                 waveMonstersSpawnPoint[4] = "0,0,1,2,3,4";
-
+                TurretsAvailable();
               StartCoroutine(ManagingWaves());
               
            }
@@ -262,7 +263,7 @@ public class WaveScript : MonoBehaviour
                 waveMonstersSpawnPoint[2] = "0,0,2,3,4,4";
                 waveMonstersSpawnPoint[3] = "0,1,1,3,4,4";
                 waveMonstersSpawnPoint[4] = "0,1,1,3,4,4";
-
+                TurretsAvailable();
               StartCoroutine(ManagingWaves());
               
            }
@@ -294,7 +295,7 @@ public class WaveScript : MonoBehaviour
                 waveMonstersSpawnPoint[2] = "0,0,1,1,2,2,3,4,4";
                 waveMonstersSpawnPoint[3] = "0,0,1,1,2,2,3,4,4";
                 waveMonstersSpawnPoint[4] = "0,0,1,2,2,3,3,4,4";
-
+                TurretsAvailable();
               StartCoroutine(ManagingWaves());      
            }
            
@@ -325,7 +326,7 @@ public class WaveScript : MonoBehaviour
                 waveMonstersSpawnPoint[2] = "0,0,1,1,2,2,3,3,4,4";
                 waveMonstersSpawnPoint[3] = "0,0,1,1,2,2,3,3,4,4";
                 waveMonstersSpawnPoint[4] = "0,0,1,1,2,3,3,3,4,4";
-
+                TurretsAvailable();
               StartCoroutine(ManagingWaves());      
            }
            
@@ -356,7 +357,7 @@ public class WaveScript : MonoBehaviour
                 waveMonstersSpawnPoint[2] = "0,0,0,1,1,1,2,3,3,4,4,4";
                 waveMonstersSpawnPoint[3] = "0,0,1,1,1,2,2,2,3,3,3,4,4,4";
                 waveMonstersSpawnPoint[4] = "0,0,0,1,1,1,2,2,2,3,4";
-
+                TurretsAvailable();
               StartCoroutine(ManagingWaves());      
            }
            
@@ -485,6 +486,39 @@ public class WaveScript : MonoBehaviour
                 }
         yield return new WaitForSeconds(0.05f);
         }
+
     }
+    void TurretsAvailable()
+        {
+            if(stage < 2)
+            {//apenas o dom
+                turretsHUD[0].SetActive(true);
+            }
+
+             if(stage > 1 && stage < 5)
+            {//dom e jô
+                turretsHUD[0].SetActive(true);
+                turretsHUD[1].SetActive(true);
+            }
+            
+             if(stage > 4 && stage <7)
+            {//dom, jo e otto
+                turretsHUD[0].SetActive(true);
+                turretsHUD[1].SetActive(true);
+                turretsHUD[2].SetActive(true);
+            }
+
+             if(stage > 6)
+            {//dom, jo, otto e riso
+                turretsHUD[0].SetActive(true);
+                turretsHUD[1].SetActive(true);
+                turretsHUD[2].SetActive(true);
+                turretsHUD[3].SetActive(true);
+            }
+
+
+
+        }
+
 }
 
