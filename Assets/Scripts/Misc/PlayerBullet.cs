@@ -18,6 +18,7 @@ private string[] enemyTags;
 private RaycastHit hit;
 		void Start () 
 	{
+		StartCoroutine(Deactivating());
 		enemyTags = new string[4];
 		enemyTags[0] = "Orange";
 		enemyTags[1] = "Blue";
@@ -51,5 +52,11 @@ private RaycastHit hit;
 		
 		Gizmos.color = Color.red;
 		Gizmos.DrawWireSphere(transform.position ,radius);
+	}
+
+	IEnumerator Deactivating()
+	{
+		yield return new WaitForSeconds(10f);
+		gameObject.SetActive(false);
 	}
 }

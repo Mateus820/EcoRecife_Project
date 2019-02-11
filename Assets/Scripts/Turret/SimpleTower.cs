@@ -22,7 +22,7 @@ public class SimpleTower : MonoBehaviour {
 			yield return new WaitForSeconds(shotFrequence);
 			var obj = objPooler.GetPooledObject();
 			if(obj != null){
-				obj.transform.position = transform.position;
+				obj.transform.position = new Vector3(transform.position.x , transform.position.y + 3f, transform.position.z);
 				obj.tag = ballTag;
 				obj.SetActive(true);
 			}

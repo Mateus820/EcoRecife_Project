@@ -13,6 +13,8 @@ public class Shooting : MonoBehaviour {
 
 	private bool shootingWithRightClaw;
 
+	[SerializeField] private Transform[] bulletSpawn;
+
 		void Start () 
 		{
 			canShot = true;
@@ -31,9 +33,17 @@ public class Shooting : MonoBehaviour {
 			StartCoroutine(ShootingCooldown());
 			var obj = PlayerBulletsObjectPooler.instance.GetPooledObject();
 			obj.SetActive(true);
-			obj.transform.position = Camera.main.transform.position;
-			obj.transform.rotation = Camera.main.transform.rotation;
-		
+			if(shootingWithRightClaw)
+			{	
+				obj.transform.position = bulletSpawn[0].position;
+				obj.transform.rotation = Camera.main.transform.rotation;
+			}
+
+			else
+			{
+				obj.transform.position = bulletSpawn[1].position;
+				obj.transform.rotation =Camera.main.transform.rotation;			
+			}
 		}
 	}
 
