@@ -44,7 +44,13 @@ public class Draggable : MonoBehaviour {
 		{
 			transform.position = startPosition;
 			BuildManager.instance.SetTurret(name);
+			switch (name){
+				case "":
+					posToBuild = new Vector3();
+				break;
+			}
 			obj = Instantiate(BuildManager.instance.GetTurretToBuild, posToBuild, Quaternion.identity);
+			//obj.SetParent(~o target aqui , como um transfrom~)
 			gameObject.SetActive(false);
 		}
 		isDragging = false;

@@ -6,6 +6,7 @@ public class BuildManager : MonoBehaviour {
 
 	public static BuildManager instance;
 
+	public string turTobuild;
 	[SerializeField] private GameObject turret;
 	[SerializeField] private GameObject[] turrets;
 
@@ -20,6 +21,7 @@ public class BuildManager : MonoBehaviour {
 	}
 
 	public void SetTurret(string turretName){
+		turTobuild = turretName;
 		switch(turretName){
 			case "Riso":
 				turret = turrets[0];
