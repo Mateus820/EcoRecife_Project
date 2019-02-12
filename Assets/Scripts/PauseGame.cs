@@ -2,16 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PauseGame : MonoBehaviour
 {
     
-    [SerializeField] private GameObject menuPause;
+    [SerializeField] private GameObject pauseBtn;
+    [SerializeField] private GameObject menu;
     public bool isPaused;
 
     void Start()
     {
-        //menuPause.SetActive(false);
+        menu.SetActive(false);
+        pauseBtn.SetActive(true);
         isPaused = false;
     }
 
@@ -25,16 +28,24 @@ public class PauseGame : MonoBehaviour
         }
     }
 
+    public void MenuBtn(){
+        SceneManager.LoadScene("Main Menu");
+    }
+
     void Pause()
     {
         Time.timeScale = 0f;
-        //menuPause.SetActive(true);
+        pauseBtn.SetActive(false);
+        menu.SetActive(true);
+        AudioManager.instance.Pause("Gameplay Theme");
         isPaused = true;
     }
 
     void Resume(){
         Time.timeScale = 1f;
-        //menuPause.SetActive(false);
+        pauseBtn.SetActive(true);
+        menu.SetActive(false);
+        AudioManager.instance.Play("Gameplay Theme");
         isPaused = false;
     }
 }
