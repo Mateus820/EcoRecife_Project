@@ -724,6 +724,12 @@ MonoBehaviour:
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   delegates: []
+--- !u!4 &138251576 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6110640298963378220, guid: a8d8c9a6d581c544ca57ee4af99bfb60,
+    type: 3}
+  m_PrefabInstance: {fileID: 1724053771}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &170076733
 GameObject:
   m_ObjectHideFlags: 0
@@ -1748,6 +1754,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 474e84de6e107f6488286d754413a583, type: 3}
+--- !u!4 &510709675 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3578414386910911354, guid: a8d8c9a6d581c544ca57ee4af99bfb60,
+    type: 3}
+  m_PrefabInstance: {fileID: 1724053771}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &552830773
 GameObject:
   m_ObjectHideFlags: 0
@@ -2659,6 +2671,36 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1047710718}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1082906514
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1082906515}
+  m_Layer: 9
+  m_Name: bulletSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1082906515
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1082906514}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.5, y: -0, z: -1.75}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 510709675}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1084549082
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3503,6 +3545,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eed38d47a100b824e950711deeca5815, type: 3}
+--- !u!1 &1322016542
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1322016543}
+  m_Layer: 9
+  m_Name: bulletSpawn (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1322016543
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1322016542}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.5, y: -0, z: -1.75}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 138251576}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1341389474
 GameObject:
   m_ObjectHideFlags: 0
@@ -4684,11 +4756,6 @@ PrefabInstance:
       propertyPath: m_ClearFlags
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114991790574837670, guid: a8d8c9a6d581c544ca57ee4af99bfb60,
-        type: 3}
-      propertyPath: textHealth
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 4794505993339402, guid: a8d8c9a6d581c544ca57ee4af99bfb60, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -4786,8 +4853,33 @@ PrefabInstance:
       objectReference: {fileID: 1165027860}
     - target: {fileID: 114491899647932024, guid: a8d8c9a6d581c544ca57ee4af99bfb60,
         type: 3}
+      propertyPath: bulletSpawn.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114491899647932024, guid: a8d8c9a6d581c544ca57ee4af99bfb60,
+        type: 3}
       propertyPath: shotCooldown
       value: 0.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 114491899647932024, guid: a8d8c9a6d581c544ca57ee4af99bfb60,
+        type: 3}
+      propertyPath: bulletSpawn.Array.data[0]
+      value: 
+      objectReference: {fileID: 1082906515}
+    - target: {fileID: 114491899647932024, guid: a8d8c9a6d581c544ca57ee4af99bfb60,
+        type: 3}
+      propertyPath: bulletSpawn.Array.data[1]
+      value: 
+      objectReference: {fileID: 1322016543}
+    - target: {fileID: 114731139154237578, guid: a8d8c9a6d581c544ca57ee4af99bfb60,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114991790574837670, guid: a8d8c9a6d581c544ca57ee4af99bfb60,
+        type: 3}
+      propertyPath: textHealth
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8d8c9a6d581c544ca57ee4af99bfb60, type: 3}
